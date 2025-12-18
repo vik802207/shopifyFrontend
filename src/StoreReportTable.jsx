@@ -313,7 +313,7 @@ export default function StoreReportTable({ token }) {
   ================================ */
   const fetchFacebookAds = (params = {}) => {
     axios
-      .get("http://localhost:8000/api/reports/ads-summary", {
+      .get("https://shopify-6wvc.onrender.com/api/reports/ads-summary", {
         headers: { Authorization: `Bearer ${token}` },
         params,
       })
@@ -333,7 +333,7 @@ export default function StoreReportTable({ token }) {
   ================================ */
   const fetchData = (params = {}) => {
     axios
-      .get("http://localhost:8000/api/reports/store-summary", {
+      .get("https://shopify-6wvc.onrender.com/api/reports/store-summary", {
         headers: { Authorization: `Bearer ${token}` },
         params,
       })
