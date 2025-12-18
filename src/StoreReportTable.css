@@ -1,0 +1,257 @@
+/* ================================
+   🌤️ LIGHT DASHBOARD BASE
+================================ */
+/* ================================
+   📐 FULL SCREEN LAYOUT
+================================ */
+
+/* Whole page */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+/* Dashboard wrapper */
+.store-dashboard {
+  height: 97.5vh;              /* FULL SCREEN */
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  background: #f8fafc;
+}
+
+/* Filter bar height fixed */
+.filter-bar-wrapper {
+  flex-shrink: 0;
+  margin-bottom: 12px;
+}
+
+/* Table takes remaining space */
+.table-wrapper {
+  flex: 1;                    /* 🔥 THIS MAKES IT FULL */
+  min-height: 0;    
+  overflow: hidden;          /* VERY IMPORTANT for DataGrid */
+}
+
+/* Force DataGrid to stretch */
+.MuiDataGrid-root {
+  height: 100% !important;
+  border-radius: 14px;
+}
+
+.store-dashboard {
+  background: linear-gradient(180deg, #f8fafc, #eef2f7);
+  padding: 22px;
+  border-radius: 18px;
+  box-shadow:
+    0 20px 40px rgba(15, 23, 42, .08),
+    inset 0 0 0 1px rgba(15, 23, 42, .04);
+}
+
+/* ================================
+   🔘 FILTER BAR
+================================ */
+.filter-bar {
+  background: #ffffff;
+  padding: 14px 16px;
+  border-radius: 14px;
+  box-shadow:
+    0 8px 24px rgba(15, 23, 42, .06),
+    inset 0 0 0 1px rgba(15, 23, 42, .05);
+}
+
+/* Buttons */
+.filter-bar button {
+  border-radius: 999px !important;
+  font-weight: 600;
+  text-transform: none !important;
+}
+
+/* ================================
+   📊 DATAGRID – PREMIUM WHITE
+================================ */
+.MuiDataGrid-root {
+  border-radius: 18px;
+  border: none !important;
+  background: #ffffff;
+  color: #0f172a;
+  border-color: rgb(17 241 238);
+  box-shadow:
+    0 16px 40px rgba(15, 23, 42, .08),
+    inset 0 0 0 1px rgba(15, 23, 42, .04);
+}
+
+/* Header */
+.MuiDataGrid-columnHeaders {
+  background: linear-gradient(
+    180deg,
+    #f1f5f9,
+    #e2e8f0
+  );
+  color: #0042df;
+  font-weight: 700;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* Rows */
+.MuiDataGrid-row {
+  transition: all .2s ease;
+}
+
+.MuiDataGrid-row:hover {
+  background: #f8fafc;
+}
+
+/* Cells */
+.MuiDataGrid-cell {
+  border-bottom: 1px solid #eef2f7;
+}
+
+/* Pagination */
+.MuiTablePagination-root {
+  color: #334155;
+}
+
+/* ================================
+   🔥 METRIC COLORS
+================================ */
+.MuiDataGrid-cell[data-field="orderValue"],
+.MuiDataGrid-cell[data-field="arrINR"],
+.MuiDataGrid-cell[data-field="totalMonetization"] {
+  font-weight: 700;
+  color: #16a34a;
+}
+
+.MuiDataGrid-cell[data-field="facebookSpend"] {
+  font-weight: 700;
+  color: #2563eb;
+}
+
+.MuiDataGrid-cell[data-field="rtoPercent"] {
+  font-weight: 700;
+  color: #dc2626;
+}
+
+/* ================================
+   🧾 EMPTY / NO DATA
+================================ */
+.MuiDataGrid-overlay {
+  color: #64748b;
+}
+/* ================================
+   🔘 FILTER BUTTONS
+================================ */
+.filter-bar button {
+  border-radius: 10px !important;
+  padding: 8px 18px !important;
+  font-weight: 600 !important;
+  letter-spacing: .3px;
+  text-transform: none !important;
+  box-shadow: 0 6px 16px rgba(37,99,235,.18);
+}
+
+/* Active (Today / Yesterday) */
+.filter-bar button.Mui-containedPrimary {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8) !important;
+}
+
+/* Inactive */
+.filter-bar button.MuiOutlined-root {
+  border: 1px solid #c7d2fe !important;
+  color: #1e3a8a !important;
+  background: #ffffff !important;
+}
+
+/* Apply Button */
+.filter-bar button:last-child {
+  background: linear-gradient(135deg, #16a34a, #15803d) !important;
+  color: white !important;
+}
+/* ================================
+   📐 FULL SCREEN TABLE
+================================ */
+.table-wrapper {
+  height: calc(100vh - 220px); /* header + filters adjust */
+  width: 100%;
+}
+
+/* Datagrid should stretch */
+.MuiDataGrid-root {
+  height: 100%;
+}
+/* ================================
+   ⏮️ PAGINATION
+================================ */
+.MuiTablePagination-root {
+  padding: 12px 16px;
+  background: #ffffff;
+  border-top: 1px solid #e5e7eb;
+}
+
+.MuiTablePagination-actions button {
+  border-radius: 8px;
+  margin: 0 4px;
+  border: 1px solid #e5e7eb;
+  background: #f8fafc;
+}
+
+.MuiTablePagination-actions button:hover {
+  background: #e0e7ff;
+}
+/* ================================
+   📊 EXCEL-LIKE STICKY COLUMN
+================================ */
+
+/* Enable horizontal scroll */
+.MuiDataGrid-virtualScroller {
+  overflow-x: auto !important;
+}
+
+/* Sticky Account Name column */
+.sticky-col {
+  position: sticky;
+  left: 0;
+  background: #ffffff;
+  z-index: 2;
+  border-right: 1px solid #e5e7eb;
+}
+
+/* Header sticky */
+.MuiDataGrid-columnHeaders .sticky-col {
+  z-index: 3;
+  background: linear-gradient(180deg, #f1f5f9, #e2e8f0);
+}
+
+/* ================================
+   🫥 HIDE SCROLLBARS (KEEP SCROLL)
+================================ */
+
+/* Horizontal + Vertical scrollbar hide */
+.MuiDataGrid-virtualScroller {
+  scrollbar-width: none;        /* Firefox */
+  -ms-overflow-style: none;     /* IE / Edge */
+}
+
+.MuiDataGrid-virtualScroller::-webkit-scrollbar {
+  display: none;                /* Chrome / Safari */
+}
+
+/* Hide outer scrollbar also (safety) */
+.MuiDataGrid-main {
+  scrollbar-width: none;
+}
+
+.MuiDataGrid-main::-webkit-scrollbar {
+  display: none;
+}
+.MuiDataGrid-virtualScroller {
+  overflow: auto !important; /* grid scroll ON */
+  scrollbar-width: none;
+}
+
+.MuiDataGrid-virtualScroller::-webkit-scrollbar {
+  display: none;
+}
+
+
