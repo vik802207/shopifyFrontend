@@ -253,5 +253,53 @@ html, body, #root {
 .MuiDataGrid-virtualScroller::-webkit-scrollbar {
   display: none;
 }
+.MuiDataGrid-row[data-id="TOTAL_ROW"] {
+  font-weight: 700;
+  background: #eef2ff;
+  border-top: 2px solid #4f46e5;
+}
+
+.MuiDataGrid-row[data-id="TOTAL_ROW"] .MuiDataGrid-cell {
+  color: #111827;
+}.google-spend-cell {
+  font-weight: 700;          /* bold */
+  color: #000000 !important; /* pure black */
+}
+
+.order-count-bold {
+  font-weight: 700;   /* bold */
+  color: #000000 !important;   /* pure black */
+}
+.Total-spend-percent-cell {
+  font-weight: 700;   /* bold */
+  color: #38276b !important;   /* pure black */
+}
+.cpp-cell{
+  font-weight: 700;   /* bold */
+  color:  #38276b !important;   /* pure black */
+}
+.yesterdayorders-cell{
+  font-weight: 550;   /* bold */
+  color:  #0a3171 !important;   /* pure black */
+}
+.diff-positive {
+  color: #0a7a0a;
+  font-weight: 700;
+}
+
+.diff-negative {
+  color: #c62828;
+  font-weight: 700;
+}
+
+.diff-zero {
+  color: #000;        /* black */
+  font-weight: 700;   /* BOLD */
+}
+.table-wrapper {
+  height: calc(100vh - 180px); /* ya jo tumhare layout me ho */
+  overflow: auto;
+}
+
 
 
